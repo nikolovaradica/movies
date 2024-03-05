@@ -1,0 +1,14 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres:14-alpine
+    container_name: "aucta_task"
+    ports:
+      - 5432:5432
+    volumes:
+      - ~/apps/postgres:/var/lib/postgresql/data-aucta
+    environment:
+      - POSTGRES_PASSWORD=task123
+      - POSTGRES_USER=task
+      - POSTGRES_DB=aucta-task
